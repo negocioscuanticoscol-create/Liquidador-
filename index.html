@@ -885,7 +885,7 @@ async function registrarEnSheets(){
   });
 
   try{
-    const img=new Image();
+    const img=fetch(CONFIG.sheets_webhook+'?'+params.toString(),{method:'GET',mode:'no-cors'});
     img.src=CONFIG.sheets_webhook+'?'+params.toString();
     await new Promise(r=>setTimeout(r,1200)); // pequeña espera para que dispare
   }catch(e){
